@@ -1,0 +1,122 @@
+.containerLog{
+  height: 100vh;
+  width: 100%;
+  background: #d0d0d2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.con{
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 20px;
+
+}
+.login {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;  
+  
+}
+
+.lContainer {
+  display: flex;
+  width: 300px;
+  height: 500px;
+  flex-direction: column;
+  gap: 15px;
+  background: #383866;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 10px 5px 5px rgb(174, 171, 171);
+}
+
+.lInput{
+  height: 30px;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  
+}
+
+.lButton {
+  border: none;
+  padding: 10px 20px;
+  background-color: #0071c2;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.lButton:hover{
+  background-color: #0071c28c;
+  cursor: not-allowed;
+}
+
+label{
+  color: #fff;
+  font-weight: bold;
+  font-size: 2.5rem;
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+  margin-bottom: 40px;
+
+  
+}
+
+.main span{
+  color: #fff;
+  font-size: 1.1rem;
+  text-align: center;
+  margin-top: 10px;
+
+}
+
+.register{
+  margin-top: 80px;
+  
+}
+
+.register .lContainer{
+  
+  height: 500px;
+  display: flex;
+  background-color: rgb(170, 185, 196);
+  border-radius: 60% / 10%;
+  transform: translateY(-180);
+  transition: 0.8s ease-in-out;
+  position: relative;
+  z-index: 200;
+  overflow: hidden;
+  color: black;
+  margin-top: 80px;
+  overflow: hidden;
+  
+}
+#label{
+  display: none;
+}
+
+#label:checked ~ .register{
+  transform: translateY(360px);
+}
+
+#label:checked ~ .register label{
+  transform: scale(0.7);
+}
+#label:checked ~ .login label{
+  transform: scale(1);
+}
+#label ~ .login label{
+  transform: scale(0.7);
+}

@@ -1,0 +1,31 @@
+.ePage{
+    background: aliceblue;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.eError{
+    font-size: xx-large;
+    margin: 10px;
+    text-align: center;
+}
+.eTitle{
+font-size: x-large;
+    margin: 10px;
+    text-align: center;
+}
+.eNoFount{
+font-size: large;
+    margin: 10px;
+    text-align: center;
+}
+.eLink{
+margin: 10px;
+ text-align: center;
+ 
+}
