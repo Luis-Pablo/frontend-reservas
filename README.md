@@ -7,7 +7,7 @@ Para ejecutar la aplicación ingresar el siguiente comando:
 `$  npm run dev`
 
 ### Variables de entorno
-Al interior de la carpeta /dashboard-reserva debes crear un documento .env el cual debe contener la siguiente variable:
+Al interior de la carpeta /frontend-reservas debes crear un documento .env el cual debe contener la siguiente variable:
 ```javascript
  VITE_REACT_APP_HOST =
 
