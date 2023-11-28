@@ -7,7 +7,7 @@ import { SearchContext } from "../../context/SearchContext";
 const titles = [
   "Hoteles",
   "Apartamentos",
-  "Centros Turisticos",
+  "Centros Turísticos",
   "Villas",
   "Cabañas",
 ];
