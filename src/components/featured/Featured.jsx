@@ -28,7 +28,6 @@ const provisionalData = [
 ];
 
 const Featured = () => {
-
   const {
     dispatch,
     city: destination,
@@ -53,15 +52,14 @@ const Featured = () => {
     <div className="featured">
       {provisionalData.map((item) => (
         <div key={item.id} onClick={handleSearch} className="featuredItem">
-          <div>
+          <div className="featuredImg">
             <Link>
-              <img src={item.image} alt="" className="featuredImg" />
+              <img src={item.image} alt="" />
             </Link>
-
-            <div className="featuredTitles">
-              <h1>{item.title}</h1>
-              <h2>{item.direction}</h2>
-            </div>
+          </div>
+          <div className="featuredTitles">
+            <h1>{item.title}</h1>
+            <h2>{item.direction}</h2>
           </div>
         </div>
       ))}

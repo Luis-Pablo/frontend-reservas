@@ -4,15 +4,13 @@
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  z-index: 1;
+
 }
 .featuredItem{
   position: relative;
   color: white;
   border-radius: 10px;
   overflow: hidden;
-  height: 250px;
-  flex:1;
   overflow: hidden;
 }
 .featuredItem:hover img {
@@ -21,11 +19,11 @@
   transition: all 0.5s ease-in-out;
 }
 
-.featuredImg{
-  width: 100%;
-  height: 100%;
+.featuredImg img{
+   width: 100%;
   object-fit: cover;
 }
+
 
 .featuredTitles{
   position: absolute;
@@ -34,4 +32,17 @@
   list-style: none;
   text-decoration: none;
   color: white;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .featured{    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow: hidden;
+    width: 90%;
+
+  }
+  
 }

@@ -20,7 +20,6 @@ const images = [
 ];
 
 const PropertyList = () => {
- 
   const {
     dispatch,
     city: destination,
@@ -39,19 +38,19 @@ const PropertyList = () => {
 
   return (
     <div className="pList">
-      {images.map((img, i) => (
-        <div className="link" key={i} onClick={handleSearch}>
-          <div className="pListItem">
+      {images.map((item, i) => (
+        <div className="pListItem" key={i} onClick={handleSearch}>
+          <div className="pListImg">
             <Link>
-              <img src={img} alt="" className="pListImg" />
+              <img src={item} alt="" />
             </Link>
-            <div className="pListTitles">
-              <h1>{titles[i]}</h1>
-              <h2>
-                {" "}
-                {images[i]?.count} {titles[i].toLowerCase()}
-              </h2>
-            </div>
+          </div>
+          <div className="pListTitles">
+            <h1>{titles[i]}</h1>
+            <h2>
+              {" "}
+              {item[i]?.count} {titles[i].toLowerCase()}
+            </h2>
           </div>
         </div>
       ))}

@@ -51,9 +51,11 @@ const FeaturedProperties = () => {
     <div className="fp">
       {provisionalData.map((item) => (
         <div className="fpItem" key={item.id} onClick={handleSearch}>
-          <Link>
-            <img src={item.image} alt="" className="fpImg" />
-          </Link>
+          <div className="fpImg">
+            <Link>
+              <img src={item.image} alt="" />
+            </Link>
+          </div>
           <span className="fpName">{item.name}</span>
           <span className="fpCity"> {item.city}</span>
           <span className="fpPrice">Precios desde {item.cheapestPrice}</span>
