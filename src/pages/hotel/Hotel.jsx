@@ -52,7 +52,6 @@ const Hotel = () => {
   const navigate = useNavigate()
 
   const { dates, options } = useContext(SearchContext);
-  console.log(dates);
   const MILLISECONDS_PER_DAY = 1000 * 60 * 60 * 24;
 
   const dayDifference = (date1, date2) => {
@@ -97,6 +96,7 @@ const Hotel = () => {
   const handleClick = () => {
     if (user) {
       setOpenModal(true);
+      
     } else {
       navigate('/login')
     }
@@ -137,7 +137,9 @@ const Hotel = () => {
             </div>
           )}
           <div className="hotelWrapper">
-            <button className="bookNow">Reserve o separa ahora! </button>
+            <button className="bookNow" onClick={handleClick}>
+              Reserva ahora!{" "}
+            </button>
             <h1 className="hotelTitle">{data.name}</h1>
             <div className="hotelAddress">
               <FontAwesomeIcon icon={faLocationDot} />
@@ -170,8 +172,8 @@ const Hotel = () => {
               <div className="hotelDetailsPrice">
                 <h1>Perfecto para estar {days} noches</h1>
                 <span>
-                  Esta propiedad esta en una excelente ubicación cerca del centro
-                  de la ciudad.
+                  Esta propiedad esta en una excelente ubicación cerca del
+                  centro de la ciudad.
                 </span>
                 <h2>
                   <b>${days * data.cheapestPrice * options.room}</b> ({days}{" "}
@@ -186,7 +188,7 @@ const Hotel = () => {
         </div>
       )}
 
-    {openModal && <Reserve setOpen={setOpenModal} hotelId={hotelId} />}
+      {openModal && <Reserve setOpen={setOpenModal} hotelId={hotelId} />}
     </div>
   );
 };

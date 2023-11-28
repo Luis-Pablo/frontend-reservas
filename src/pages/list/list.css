@@ -84,3 +84,21 @@
 .listResult {
   flex: 3;
 }
+
+@media only screen and (max-width: 768px) {
+  .listWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .listSearch{
+    width: 90%;
+    
+
+  }
+  .listResult{
+    width: 90%;
+} 
+}
+
+

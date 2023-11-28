@@ -1,12 +1,12 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./reserve.css";
-
 import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 import useFetch from "../../hooks/useFetch";
 import { useContext, useState } from "react";
 import { SearchContext } from "../../context/SearchContext.jsx";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import toast, { Toaster } from "react-hot-toast";
 
 const host = import.meta.env.VITE_REACT_APP_HOST;
 
@@ -33,7 +33,6 @@ const Reserve = ({ setOpen, hotelId }) => {
   let start = localStorage.getItem("startDate");
   const allDates = getDatesInRange(start, end);
 
-  console.log(allDates);
 
    const isAvailable = (roomNumber) => {
      const isFound = roomNumber.unavailableDates.some((date) =>
@@ -64,9 +63,19 @@ const Reserve = ({ setOpen, hotelId }) => {
           });
           return res.data;
         })
-      );
+      )      
+      
       setOpen(false);
-      navigate("/");
+
+      setTimeout(() => {
+        toast.success("Su habitación ha sido reservada", {
+          duration: 1500,
+          position: "top-center",
+        });
+        navigate("/");
+      }, 1500);
+      toast.dismiss();
+    
     } catch (err) {}
   };
 
