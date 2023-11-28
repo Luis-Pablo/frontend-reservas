@@ -1,8 +1,18 @@
-# React + Vite
+## Aplicacion reservas
+Aplicación web que conecta a oferentes de servicios de alojamiento con clientes. Permite a los clientes buscar por comuna, precio y si tiene disponibilidad en las fechas en las que requiere el servicio.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Ejecución
+Para ejecutar la aplicación ingresar el siguiente comando:
 
-Currently, two official plugins are available:
+`$  npm run dev`
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Variables de entorno
+Al interior de la carpeta /frontend-reservas debes crear un documento .env el cual debe contener la siguiente variable:
+```javascript
+ VITE_REACT_APP_HOST =
+
+```
+
+### Link a proyectos
+[Aplicación reservas](https://frontend-reservas.vercel.app/)
+[Panel de administracion reservas](https://dashboard-reserva.vercel.app/)
