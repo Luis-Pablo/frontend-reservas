@@ -40,6 +40,7 @@
   width: 100px;
   display: flex;
   gap: 20px;
+  position: relative;
  
 }
 
@@ -53,7 +54,36 @@
 .navUser{
   cursor: pointer;
 }
+.navDropDown{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 45px;
+  right: 45px;
+  width: 120px;
+  border-radius: 15px;
+  padding: 15px;
+  background-color: #f0ebeb;
+  border: 2px solid grey;
+  z-index: 999;
+  
+}
+.navDropDown::after{
+  content: '';
+  position: absolute;
+  top: -0.7rem;
+  right: 2rem ;
+  width: 20px;
+  height: 20px;
+  transform: rotate(45deg); 
+  background-color: #f0ebeb;
+  border-left: 2px solid grey;
+  border-top: 2px solid grey;
 
+}
+.navDropDown li{
+  list-style: none;
+}
 @media only screen and (max-width: 768px) {
   .navItems{
     padding-right: 10px;
