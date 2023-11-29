@@ -81,7 +81,7 @@ const Reserve = ({ setOpen, hotelId }) => {
 
   return (
     <div className="reserve">
-      <div className="rContainer">
+      <div className="resContainer">
         <FontAwesomeIcon
           icon={faCircleXmark}
           className="rClose"

@@ -62,13 +62,10 @@ const Hotel = () => {
 
   useEffect(() => {
     try {
-      localStorage.setItem("startDate", new Date(dates[0].startDate));
-      localStorage.setItem("endDate", new Date(dates[0].endDate));
       const currentDay = dayDifference(dates[0].endDate, dates[0].startDate);
       setDays(currentDay);
     } catch (error) {
-      let end = new Date(localStorage.getItem("endDate"));
-      let start = new Date(localStorage.getItem("startDate"));
+      console.log(error);
       const currentDay = dayDifference(end, start);
       setDays(currentDay);
     }

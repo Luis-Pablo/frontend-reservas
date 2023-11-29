@@ -19,16 +19,13 @@ const List = () => {
   const [min, setMin] = useState(0);
   const [max, setMax] = useState(1000);
 
-  const { data, loading, error, reFetch } = useFetch(
+  const { data, loading, reFetch } = useFetch(
     `hotels?city=${destination}&min=${min}&max=${max}`
   );
 
-  console.log(data);
   const handleClick = () => {
     reFetch();
   };
-
-  console.log(data);
 
   return (
     <div>
@@ -44,10 +41,10 @@ const List = () => {
             </div>
             <div className="lsItem">
               <label>Fecha de llegada</label>
-              <span onClick={() => setOpenDate(!openDate)}>{`${format(
-                dates[0].startDate,
-                "MM/dd/yyyy"
-              )} to ${format(dates[0].endDate, "MM/dd/yyyy")}`}</span>
+              <span onClick={() => setOpenDate(!openDate)}>
+                {`${format(dates[0].startDate, "dd/mm/yyyy")} a 
+              ${format(dates[0].endDate, "dd/mm/yyyy")}`}
+              </span>
               {openDate && (
                 <DateRange
                   onChange={(item) => setDates([item.selection])}
