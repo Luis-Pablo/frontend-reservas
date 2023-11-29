@@ -47,7 +47,7 @@ const Hotel = () => {
   const [days, setDays] = useState();
   const [openModal, setOpenModal] = useState(false);
 
-  const { data, loading, error } = useFetch(`hotels/find/${hotelId}`);
+  const { data, loading} = useFetch(`hotels/find/${hotelId}`);
   const { user } = useContext(AuthContext);
   const navigate = useNavigate()
 

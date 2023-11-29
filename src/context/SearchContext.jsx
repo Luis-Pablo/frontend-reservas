@@ -1,7 +1,7 @@
 import { createContext, useReducer } from "react";
 import { addDays } from "date-fns";
 
-const today = new Date()
+const today = new Date();
 const tomorrow = addDays(today, 2)
 
 const INITIAL_STATE = {
@@ -10,6 +10,7 @@ const INITIAL_STATE = {
     {
       startDate: today,
       endDate: tomorrow,
+      key: "selection",
     },
   ],
   options: {

@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import axios from 'axios'
 
 const host = import.meta.env.VITE_REACT_APP_HOST;
-console.log(host);
 const useFetch = (url) => {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(false);

@@ -2,18 +2,20 @@ import "./list.css";
 import Navbar from "../../components/navbar/Navbar";
 import Header from "../../components/header/Header";
 import { useLocation } from "react-router-dom";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { format } from "date-fns";
 import { DateRange } from "react-date-range";
 import SearchItem from "../../components/searchItem/SearchItem";
 import useFetch from "./../../hooks/useFetch";
+import { SearchContext } from "../../context/SearchContext";
 
 const List = () => {
+  const {dates: tempDates} = useContext(SearchContext)
   const location = useLocation();
   const [destination, setDestination] = useState(
     location.state.destination || "santiago"
   );
-  const [dates, setDates] = useState(location.state.dates);
+  const [dates, setDates] = useState(location.state.dates || tempDates);
   const [openDate, setOpenDate] = useState(false);
   const [options, setOptions] = useState(location.state.options);
   const [min, setMin] = useState(0);
@@ -42,8 +44,10 @@ const List = () => {
             <div className="lsItem">
               <label>Fecha de llegada</label>
               <span onClick={() => setOpenDate(!openDate)}>
-                {`${format(dates[0].startDate, "dd/mm/yyyy")} a 
-              ${format(dates[0].endDate, "dd/mm/yyyy")}`}
+                {`${format(dates[0].startDate, "dd/MM/yyyy")} a ${format(
+                  dates[0].endDate,
+                  "dd/MM/yyyy"
+                )}`}
               </span>
               {openDate && (
                 <DateRange
