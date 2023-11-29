@@ -6,8 +6,7 @@ import { useNavigate } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 
 const host = import.meta.env.VITE_REACT_APP_HOST;
-console.log(host)
-console.log(import.meta.env.VITE_REACT_APP_HOST);
+
 const Login = () => {
   const [credentials, setCredentials] = useState({
     username: undefined,
