@@ -8,9 +8,10 @@ import { DateRange } from "react-date-range";
 import SearchItem from "../../components/searchItem/SearchItem";
 import useFetch from "./../../hooks/useFetch";
 import { SearchContext } from "../../context/SearchContext";
+import MyLoader from "../../components/myLoader/MyLoader";
 
 const List = () => {
-  const {dates: tempDates} = useContext(SearchContext)
+  const { dates: tempDates } = useContext(SearchContext);
   const location = useLocation();
   const [destination, setDestination] = useState(
     location.state.destination || "santiago"
@@ -19,11 +20,11 @@ const List = () => {
   const [openDate, setOpenDate] = useState(false);
   const [options, setOptions] = useState(location.state.options);
   const [min, setMin] = useState(0);
-  const [max, setMax] = useState(1000);
-
+  const [max, setMax] = useState(600);
   const { data, loading, reFetch } = useFetch(
     `hotels?city=${destination}&min=${min}&max=${max}`
   );
+  const { results } = data;
 
   const handleClick = () => {
     reFetch();
@@ -116,10 +117,17 @@ const List = () => {
           </div>
           <div className="listResult">
             {loading ? (
-              "Cargando..."
+              <>
+                <MyLoader />
+                <MyLoader />
+                <MyLoader />
+                <MyLoader />
+                <MyLoader />
+                <MyLoader />
+              </>
             ) : (
               <>
-                {data.map((item) => (
+                {results?.map((item) => (
                   <SearchItem item={item} key={item._id} />
                 ))}
               </>

@@ -16,6 +16,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { SearchContext } from "../../context/SearchContext.jsx";
 import { AuthContext } from "../../context/AuthContext";
 import Reserve from "../../components/reserve/Reserve.jsx";
+import { ImageGrid } from "../../components/myLoader/MyLoader.jsx";
 
  const photos = [
    {
@@ -104,7 +105,9 @@ const Hotel = () => {
       <Navbar />
       <Header type="list" />
       {loading ? (
-        "Cargando..."
+        <>
+          <ImageGrid />
+        </>
       ) : (
         <div className="hotelContainer">
           {open && (
