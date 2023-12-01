@@ -2,6 +2,7 @@ import { useContext } from "react";
 import "./featuredProperties.css";
 import { SearchContext } from "../../context/SearchContext";
 import { Link, useNavigate } from "react-router-dom";
+import useFetch from "../../hooks/useFetch";
 
 const provisionalData = [
   {
@@ -28,7 +29,10 @@ const provisionalData = [
 ];
 
 const FeaturedProperties = () => {
-
+  const { data, loading } = useFetch(
+    `hotels?limit=${3}`
+  );
+  const { results } = data;
    const {
      dispatch,
      city: destination,
@@ -49,16 +53,18 @@ const FeaturedProperties = () => {
 
   return (
     <div className="fp">
-      {provisionalData.map((item) => (
-        <div className="fpItem" key={item.id} onClick={handleSearch}>
+      {results?.map((item) => (
+        <div className="fpItem" key={item._id} onClick={handleSearch}>
           <div className="fpImg">
             <Link>
-              <img src={item.image} alt="" />
+              <img src={item.photos || image[i]} alt="" />
             </Link>
           </div>
           <span className="fpName">{item.name}</span>
           <span className="fpCity"> {item.city}</span>
-          <span className="fpPrice">Precios desde {item.cheapestPrice}</span>
+          <span className="fpPrice">
+            Precios desde USD {item.cheapestPrice}
+          </span>
           {item.rating && (
             <div className="fpRating">
               <button>{item.rating}</button>
