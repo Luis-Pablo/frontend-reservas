@@ -14,8 +14,9 @@ const List = () => {
   const { dates: tempDates } = useContext(SearchContext);
   const location = useLocation();
   const [destination, setDestination] = useState(
-    location.state.destination || "santiago"
+    location.state.destination 
   );
+  const [updateDestination, setUpdateDestination] = useState('')
   const [dates, setDates] = useState(location.state.dates || tempDates);
   const [openDate, setOpenDate] = useState(false);
   const [options, setOptions] = useState(location.state.options);
@@ -27,6 +28,7 @@ const List = () => {
   const { results } = data;
 
   const handleClick = () => {
+    setDestination(updateDestination);
     reFetch();
   };
 
@@ -40,7 +42,11 @@ const List = () => {
             <h1 className="lsTitle">Buscar</h1>
             <div className="lsItem">
               <label>Destino</label>
-              <input placeholder={destination} type="text" />
+              <input
+                placeholder={destination}
+                type="text"
+                onChange={(e) => setUpdateDestination(e.target.value)}
+              />
             </div>
             <div className="lsItem">
               <label>Fecha de llegada</label>
